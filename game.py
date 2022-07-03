@@ -13,16 +13,16 @@ root.geometry("%dx%d+%d+%d" % (width, height, x, y))
 root.resizable(0, 0)
 root.config(bg="#9b59b6")
 
-player_rock = PhotoImage(file='rock-user.png')
-player_paper = PhotoImage(file='paper-user.png')
-player_scissors = PhotoImage(file='scissors-user.png')
-comp_rock = PhotoImage(file='rock-comp.png')
-comp_paper = PhotoImage(file='paper-comp.png')
-comp_scissors = PhotoImage(file='scissors-comp.png')
-start = PhotoImage(file='start.png').subsample(4)
-win = PhotoImage(file='win.png').subsample(4)
-draw = PhotoImage(file='draw.png').subsample(4)
-lose = PhotoImage(file='lose.png').subsample(4)
+player_rock = PhotoImage(file='C:/Users/hp/RPS/Project_1/rock-user.png')
+player_paper = PhotoImage(file='C:/Users/hp/RPS/Project_1/paper-user.png')
+player_scissors = PhotoImage(file='C:/Users/hp/RPS/Project_1/scissors-user.png')
+comp_rock = PhotoImage(file='C:/Users/hp/RPS/Project_1/rock-comp.png')
+comp_paper = PhotoImage(file='C:/Users/hp/RPS/Project_1/paper-comp.png')
+comp_scissors = PhotoImage(file='C:/Users/hp/RPS/Project_1/scissors-comp.png')
+start = PhotoImage(file='C:/Users/hp/RPS/Project_1/start.png').subsample(4)
+win = PhotoImage(file='C:/Users/hp/RPS/Project_1/win.png').subsample(4)
+draw = PhotoImage(file='C:/Users/hp/RPS/Project_1/draw.png').subsample(4)
+lose = PhotoImage(file='C:/Users/hp/RPS/Project_1/lose.png').subsample(4)
 
 player_img = Label(root, image=player_rock, bg='white')
 player_img.grid(row=2, column=1, padx=30, pady=30)
@@ -98,6 +98,7 @@ def ComputerRock():
         msg.configure(image=draw)
     elif player_choice == 2:
         updatePlayerScore()
+        msg.configure(image=win)
     else:
         msg.configure(image=lose)
         updateComputerScore()
@@ -110,7 +111,7 @@ def ComputerPaper():
         msg.configure(image=draw)
     else:
         msg.configure(image=win)
-        updatePlayerScore        
+        updatePlayerScore()        
 
 def ComputerScissors():
     if player_choice == 1:
@@ -118,7 +119,7 @@ def ComputerScissors():
         updateComputerScore()
     elif player_choice == 2:
         msg.configure(image=lose)
-        updateComputerScore
+        updateComputerScore()
     else:
         msg.configure(image=draw)             
 
