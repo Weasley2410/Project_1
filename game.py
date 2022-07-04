@@ -13,16 +13,16 @@ root.geometry("%dx%d+%d+%d" % (width, height, x, y))
 root.resizable(0, 0)
 root.config(bg="#9b59b6")
 
-player_rock = PhotoImage(file='C:/Users/hp/RPS/Project_1/rock-user.png')
-player_paper = PhotoImage(file='C:/Users/hp/RPS/Project_1/paper-user.png')
-player_scissors = PhotoImage(file='C:/Users/hp/RPS/Project_1/scissors-user.png')
-comp_rock = PhotoImage(file='C:/Users/hp/RPS/Project_1/rock-comp.png')
-comp_paper = PhotoImage(file='C:/Users/hp/RPS/Project_1/paper-comp.png')
-comp_scissors = PhotoImage(file='C:/Users/hp/RPS/Project_1/scissors-comp.png')
-start = PhotoImage(file='C:/Users/hp/RPS/Project_1/start.png').subsample(4)
-win = PhotoImage(file='C:/Users/hp/RPS/Project_1/win.png').subsample(4)
-draw = PhotoImage(file='C:/Users/hp/RPS/Project_1/draw.png').subsample(4)
-lose = PhotoImage(file='C:/Users/hp/RPS/Project_1/lose.png').subsample(4)
+player_rock = PhotoImage(file='C:/Users/hp/AI/Project_1/rock-user.png')
+player_paper = PhotoImage(file='C:/Users/hp/AI/Project_1/paper-user.png')
+player_scissors = PhotoImage(file='C:/Users/hp/AI/Project_1/scissors-user.png')
+comp_rock = PhotoImage(file='C:/Users/hp/AI/Project_1/rock-comp.png')
+comp_paper = PhotoImage(file='C:/Users/hp/AI/Project_1/paper-comp.png')
+comp_scissors = PhotoImage(file='C:/Users/hp/AI/Project_1/scissors-comp.png')
+start = PhotoImage(file='C:/Users/hp/AI/Project_1/start.png').subsample(4)
+win = PhotoImage(file='C:/Users/hp/AI/Project_1/win.png').subsample(4)
+draw = PhotoImage(file='C:/Users/hp/AI/Project_1/draw.png').subsample(4)
+lose = PhotoImage(file='C:/Users/hp/AI/Project_1/lose.png').subsample(4)
 
 player_img = Label(root, image=player_rock, bg='white')
 player_img.grid(row=2, column=1, padx=30, pady=30)
@@ -97,8 +97,8 @@ def ComputerRock():
     if player_choice == 1:
         msg.configure(image=draw)
     elif player_choice == 2:
-        updatePlayerScore()
         msg.configure(image=win)
+        updatePlayerScore()
     else:
         msg.configure(image=lose)
         updateComputerScore()
@@ -116,7 +116,7 @@ def ComputerPaper():
 def ComputerScissors():
     if player_choice == 1:
         msg.configure(image=win)
-        updateComputerScore()
+        updatePlayerScore()
     elif player_choice == 2:
         msg.configure(image=lose)
         updateComputerScore()
